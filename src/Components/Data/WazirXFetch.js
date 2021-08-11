@@ -8,7 +8,7 @@ const WazirXFetch = () => {
 	const [decision, setDecision] = useState("Decision");
 	useEffect(() => {
 		fetchData();
-		const interval = setInterval(() => setTime(Date.now()), 5000);
+		const interval = setInterval(() => setTime(Date.now()), 8000);
 		return () => {
 			clearInterval(interval);
 		};

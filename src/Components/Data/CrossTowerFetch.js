@@ -13,7 +13,7 @@ const CrossTowerFetch = () => {
 	}, [decision]);
 
     useEffect(() =>{
-        const interval = setInterval(() => setTime(Date.now()), 6000);
+        const interval = setInterval(() => setTime(Date.now()), 8000);
 		return () => {
 			clearInterval(interval);
 		};
