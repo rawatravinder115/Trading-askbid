@@ -8,6 +8,13 @@ const CrossTowerFetch = () => {
 	const [decision, setDecision] = useState("Decision");
 	const [time,setTime] = useState(Date.now());
 
+	// let headers = new Headers();
+
+	// headers.append("Content-Type", "application/json");
+	// headers.append("Accept", "application/json");
+	// headers.append("Access-Control-Allow-Origin", "http://localhost:3000");
+	// headers.append("Access-Control-Allow-Credentials", "true");
+
 	useEffect(() => {
 		fetchData();
 	}, [decision]);
@@ -40,7 +47,7 @@ const CrossTowerFetch = () => {
 
 		if (riskAsk < riskBid) {
 			setDecision("BUY");
-		} else {
+		} else if(riskAsk > riskBid) {
 			setDecision("SELL");
 		}
 	};

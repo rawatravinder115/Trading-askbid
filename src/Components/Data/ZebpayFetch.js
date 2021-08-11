@@ -41,7 +41,7 @@ const ZebpayFetch = () => {
 
         if(riskAsk < riskBid){
             setDecision("BUY");
-        }else {
+        }else if(riskAsk > riskBid) {
             setDecision("SELL");
         }
 	};
