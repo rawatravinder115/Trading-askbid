@@ -24,18 +24,14 @@ const WazirXFetch = () => {
   }
 
   const decisionHandler = (data) => {
-    console.log(data);
     let ask = +data.sell;
     let bid = +data.buy;
     let target = (ask + bid) / 2;
 
-    console.log(target);
     let riskAsk = target - ask;
     let riskBid = target - bid;
 
     riskAsk = Math.abs(riskAsk);
-
-    console.log(riskAsk, riskBid);
 
     if (riskAsk <= riskBid) {
       setDecision("BUY");
