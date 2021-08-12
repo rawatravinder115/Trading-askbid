@@ -53,7 +53,6 @@ const ZebpayFetch = () => {
 				<Ask high ={btcinr.sell}></Ask>
 				<Bid low= {btcinr.buy}></Bid>
 				<h1>{decision}</h1>
-				<button onClick ={decisionHandler}>Check</button>
 			</Card>
 		</React.Fragment>
 	);
