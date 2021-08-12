@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 const CoindcxFetch = () => {
 	const [btcinr, setBtcinr] = useState({});
 	const [time, setTime] = useState(Date.now());
-    const [decision , setDecision] = useState("Decision");
+	const [decision, setDecision] = useState("Decision");
 
 	useEffect(() => {
 		fetchData();
@@ -28,7 +28,7 @@ const CoindcxFetch = () => {
 		}
 	}
 
-    const decisionHandler = () => {
+	const decisionHandler = () => {
 		let ask = btcinr.ask;
 		let bid = btcinr.bid;
 		let target = (ask + bid) / 2;
@@ -40,7 +40,7 @@ const CoindcxFetch = () => {
 
 		if (riskAsk < riskBid) {
 			setDecision("BUY");
-		} else {
+		} else if(riskAsk > riskBid)  {
 			setDecision("SELL");
 		}
 	};
@@ -50,7 +50,7 @@ const CoindcxFetch = () => {
 			<h1>Coindcx</h1>
 			<Ask high={btcinr.ask}></Ask>
 			<Bid low={btcinr.bid}></Bid>
-            <h1>{decision}</h1>
+			<h1>{decision}</h1>
 			<button onClick={decisionHandler}>Check </button>
 		</Card>
 	);
