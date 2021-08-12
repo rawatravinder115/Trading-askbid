@@ -31,19 +31,14 @@ const CoindcxFetch = () => {
   }
 
   const decisionHandler = (btcinr) => {
-    console.log(btcinr);
     let ask = +btcinr.ask;
     let bid = +btcinr.bid;
     let target = (ask + bid) / 2;
-
-    console.log(target);
 
     let riskAsk = target - ask;
     let riskBid = target - bid;
 
     riskAsk = Math.abs(riskAsk);
-
-    console.log(riskAsk, riskBid);
 
     if (riskAsk <= riskBid) {
       setDecision("BUY");
@@ -67,7 +62,6 @@ const CoindcxFetch = () => {
           <h1>{decision}</h1>
         </td>
       </tr>
-      {/* <button onClick={decisionHandler}>Check </button> */}
     </Card>
   );
 };

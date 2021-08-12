@@ -32,14 +32,11 @@ const CrossTowerFetch = () => {
     let bid = +btcinr.bid;
     let target = (ask + bid) / 2;
 
-    console.log(target);
-
     let riskAsk = target - ask;
     let riskBid = target - bid;
 
     riskAsk = Math.abs(riskAsk);
-    console.log(riskAsk, riskBid);
-
+	
     if (riskAsk <= riskBid) {
       setDecision("BUY");
     } else if (riskAsk > riskBid) {
