@@ -35,10 +35,8 @@ const WazirXFetch = () => {
 
     if (riskAsk <= riskBid) {
       setDecision("BUY");
-      console.log("yash");
     } else if (riskAsk > riskBid) {
       setDecision("SELL");
-      console.log("rishu");
     }
   };
 
