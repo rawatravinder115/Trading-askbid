@@ -1,0 +1,46 @@
+.ridge_h1 {
+    border-style: ridge;
+    /* background-color: blueviolet; */
+    color: red;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 170px;
+    height: 40px;
+    background-position: top left; 
+  }
+  
+  .ask{
+      border-style: ridge;
+      /* background-color: blueviolet; */
+      color: white;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 10px;
+      width: 120px;
+      height: 40px;
+      background-position: top left;
+  }
+  
+  .bid{
+      border-style: ridge;
+      color: white;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 10px;
+      width: 120px;
+      height: 40px;
+      background-position: top left;
+  }
+  
+  .decision{
+      border-style: ridge;
+      color: white;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 10px;
+      width: 120px;
+      height: 40px;
+      background-position: top left;
+  }
+  
