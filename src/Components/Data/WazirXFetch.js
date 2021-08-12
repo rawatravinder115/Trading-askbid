@@ -8,7 +8,8 @@ const WazirXFetch = () => {
 	const [decision, setDecision] = useState("Decision");
 	useEffect(() => {
 		fetchData();
-		const interval = setInterval(() => setTime(Date.now()), 8000);
+		decisionHandler();
+		const interval = setInterval(() => setTime(Date.now()), 6000);
 		return () => {
 			clearInterval(interval);
 		};
@@ -43,7 +44,7 @@ const WazirXFetch = () => {
 			<Ask high={Btcinr.sell}></Ask>
 			<Bid low={Btcinr.buy}></Bid>
 			<h1>{decision}</h1>
-			<button onClick={decisionHandler}>Check </button>
+			{/* <button onClick={decisionHandler}>Check </button> */}
 		</Card>
 	);
 };

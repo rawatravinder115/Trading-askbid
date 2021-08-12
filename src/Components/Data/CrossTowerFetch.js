@@ -10,14 +10,13 @@ const CrossTowerFetch = () => {
 
 	useEffect(() => {
 		fetchData();
-	}, [decision]);
-
-    useEffect(() =>{
-        const interval = setInterval(() => setTime(Date.now()), 8000);
+		decisionHandler();
+		const interval = setInterval(() => setTime(Date.now()), 5000);
 		return () => {
 			clearInterval(interval);
 		};
-    },[decision]);
+	}, [decision]);
+
 
 	async function fetchData() {
 		const response = await fetch(
@@ -53,7 +52,7 @@ const CrossTowerFetch = () => {
 			<Ask high={btcinr.ask}></Ask>
 			<Bid low={btcinr.bid}></Bid>
 			<h1>{decision}</h1>
-			<button onClick={decisionHandler}>Check </button>
+			{/* <button onClick={decisionHandler}>Check </button> */}
 		</Card>
 	);
 };

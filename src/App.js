@@ -8,8 +8,8 @@ import CoindcxFetch from "./Components/Data/CoindcxFetch";
 function App() {
 	return <React.Fragment >
       <CrossTowerFetch></CrossTowerFetch>
+      <WazirXFetch></WazirXFetch> 
       <ZebpayFetch></ZebpayFetch>
-      <WazirXFetch></WazirXFetch>
       <CoindcxFetch></CoindcxFetch>
   </React.Fragment>;
 }
