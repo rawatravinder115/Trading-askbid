@@ -1,8 +1,10 @@
+
 const Ask = (props) => {
+
 	return (
 		<div>
-			<h1>Ask Price</h1>
-			<h1>${props.high}</h1>
+			<h4>Ask Price</h4>
+			<h4>${ props.high}</h4>
 		</div>
 	);
 };

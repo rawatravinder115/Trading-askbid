@@ -2,20 +2,12 @@ import { useEffect, useState } from "react";
 import Ask from "../Fetch/Ask";
 import Bid from "../Fetch/Bid";
 import Card from "../UI/Card";
-import classes from './CoindcxFetch.module.css';
+import classes from "./CoindcxFetch.module.css";
 
 const CoindcxFetch = () => {
   const [btcinr, setBtcinr] = useState({});
   const [decision, setDecision] = useState("Decision");
   const [time, setTime] = useState(Date.now());
-
-  useEffect(() => {
-    fetchData();
-    const interval = setInterval(() => setTime(Date.now()), 5000);
-    return () => {
-      clearInterval(interval);
-    };
-  });
 
   async function fetchData() {
     const response = await fetch("https://api.coindcx.com/exchange/ticker");
@@ -30,16 +22,28 @@ const CoindcxFetch = () => {
     }
   }
 
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(() => setTime(Date.now()), 5000);
+    return () => {
+      clearInterval(interval);
+    };
+  },);
+
+
   const decisionHandler = (btcinr) => {
     let ask = +btcinr.ask;
     let bid = +btcinr.bid;
     let target = (ask + bid) / 2;
+
+    console.log(ask, bid,target);
 
     let riskAsk = target - ask;
     let riskBid = target - bid;
 
     riskAsk = Math.abs(riskAsk);
 
+    console.log(target , riskAsk , riskBid)
     if (riskAsk <= riskBid) {
       setDecision("BUY");
     } else if (riskAsk > riskBid) {
@@ -49,7 +53,7 @@ const CoindcxFetch = () => {
 
   return (
     <Card>
-      <h1 className={classes.ridge_h1}>Coindcx</h1>
+      <h4 className={classes.ridge_h1}>Coindcx</h4>
       <tr>
         <td className={classes.ask}>
           <Ask high={btcinr.ask}></Ask>
@@ -58,8 +62,8 @@ const CoindcxFetch = () => {
           <Bid low={btcinr.bid}></Bid>
         </td>
         <td className={classes.decision}>
-          <h1>Decision</h1>
-          <h1>{decision}</h1>
+          <h4>Decision</h4>
+          <h4>{decision}</h4>
         </td>
       </tr>
     </Card>

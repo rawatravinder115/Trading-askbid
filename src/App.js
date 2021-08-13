@@ -6,12 +6,14 @@ import ZebpayFetch from "./Components/Data/ZebpayFetch";
 import CoindcxFetch from "./Components/Data/CoindcxFetch";
 
 function App() {
-	return <React.Fragment >
+  return (
+    <div className='home'>
       <CrossTowerFetch></CrossTowerFetch>
-      <WazirXFetch></WazirXFetch> 
+      <WazirXFetch></WazirXFetch>
       <ZebpayFetch></ZebpayFetch>
       <CoindcxFetch></CoindcxFetch>
-  </React.Fragment>;
+    </div>
+  );
 }
 
 export default App;

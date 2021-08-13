@@ -1,8 +1,8 @@
 const Bid = (props) => {
 	return (
 		<div>
-			<h1>Bid Price</h1>
-			<h1>${props.low}</h1>
+			<h4>Bid Price</h4>
+			<h4>${props.low}</h4>
 		</div>
 	);
 };
