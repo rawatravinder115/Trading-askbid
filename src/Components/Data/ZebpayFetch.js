@@ -17,7 +17,6 @@ const ZebpayFetch = () => {
       if (data[i]["pair"] === "BTC-INR") {
         setBtcinr(data[i]);
         decisionHandler(data[i]);
-        // refreshPage();
         break;
       }
     }
@@ -25,15 +24,11 @@ const ZebpayFetch = () => {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(() => setTime(Date.now()), 3000);
+    const interval = setInterval(() => setTime(Date.now()), 5000);
     return () => {
       clearInterval(interval);
     };
   },);
-
-  function refreshPage() {
-    window.location.reload(false,6000);
-  }
 
   const decisionHandler = (btcinr) => {
     let ask = btcinr.sell;

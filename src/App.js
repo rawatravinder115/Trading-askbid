@@ -12,6 +12,7 @@ function App() {
       <WazirXFetch></WazirXFetch>
       <ZebpayFetch></ZebpayFetch>
       <CoindcxFetch></CoindcxFetch>
+      <h4 className={'h4'}>NOTE - Read CrossTower Values in DOLLAR and Other Exchange Values in INR </h4>
     </div>
   );
 }
